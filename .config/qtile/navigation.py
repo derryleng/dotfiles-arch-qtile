@@ -19,10 +19,13 @@ keys = [
     # Spawn
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "f", lazy.spawn(browser), desc="Launch browser"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "d", lazy.spawn("dmenu_run"), desc="Launch dmenu"),
+    #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawn("rofi -show combi -dpi 192"), desc="Launch rofi"),
 
     # Toggle between different layouts
     Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod, "shift"], "f", lazy.window.toggle_floating(), desc="Toggle floating"),
 
     # Window management
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
