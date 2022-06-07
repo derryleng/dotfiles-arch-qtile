@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# pcmanfm --desktop &
-picom &
-volumeicon &
-nm-applet &
-feh --bg-fill /usr/share/backgrounds/gnome/truchet-d.jpg &
+picom --vsync &
+redshift -l 51:-1 &
+# volumeicon &
+# nm-applet &
+feh --bg-fill /usr/share/backgrounds/gnome/brush-strokes-d.jpg &

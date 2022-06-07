@@ -2,26 +2,32 @@ from libqtile import layout
 from libqtile.config import Match
 
 layout_defaults = {
+    "border_width": 2,
     "border_focus": '#c4341a',
     "border_normal": '#202020',
     "border_on_single": False,
-    "border_width": 2,
-    "margin": 12
+    "margin": 2,
+    "margin_on_single": 0,
+    "insert_position": 1,
 }
 
 layouts = [
-    # layout.Columns(**layout_defaults),
-    layout.MonadTall(**layout_defaults),
+    layout.Columns(**layout_defaults, grow_amount=5),
+    # layout.MonadTall(**layout_defaults),
+    # layout.MonadThreeCol(**layout_defaults),
     layout.MonadWide(**layout_defaults),
-    layout.Max(),
-    # layout.Matrix(**layout_defaults),
+    layout.Matrix(**layout_defaults),
     # layout.Stack(num_stacks=3, **layout_defaults),
-    # layout.Bsp(**layout_defaults),
+    layout.Bsp(**layout_defaults),
+    layout.Spiral(**layout_defaults),
     layout.RatioTile(**layout_defaults),
     # layout.Tile(**layout_defaults),
     # layout.TreeTab(),
     # layout.VerticalTile(**layout_defaults),
     layout.Zoomy(**layout_defaults),
+    # layout.Slice(),
+    # layout.Floating(),
+    # layout.Max(),
 ]
 
 floating_layout = layout.Floating(

@@ -1,0 +1,22 @@
+headerbar {
+    min-height: 32px;
+    /* border-radius: 2px;*/
+}
+
+headerbar entry,
+headerbar spinbutton,
+headerbar button,
+headerbar separator {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.default-decoration {
+    min-height: 0; /* let the entry and button drive the titlebar size */ 
+}
+
+/* .default-decoration .titlebutton {
+    min-height: 16px;
+    min-width: 16px;
+    border-radius: 1px;
+} */

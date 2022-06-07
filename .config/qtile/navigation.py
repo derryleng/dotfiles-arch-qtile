@@ -1,19 +1,19 @@
 from libqtile.config import Click, Drag, Group, Key
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
+# from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = guess_terminal()
+terminal = "alacritty"# guess_terminal()
 browser = "firefox"
 
-groups = [Group(i) for i in "12345"]
+groups = [Group(i) for i in "123456789"]
 
 # A list of available commands that can be bound to keys can be found
 # at https://docs.qtile.org/en/latest/manual/config/lazy.html
 keys = [
 
     # Qtile management
-    # Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
 
     # Spawn
@@ -22,6 +22,8 @@ keys = [
     Key([mod], "d", lazy.spawn("dmenu_run"), desc="Launch dmenu"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "r", lazy.spawn("rofi -show combi -dpi 192"), desc="Launch rofi"),
+    Key([mod, "shift"], "r", lazy.spawn("flatpak run com.jagex.RuneScape"), desc="Launch RuneScape"),
+    Key([mod], "m", lazy.spawn("flatpak run com.spotify.Client --force-device-scale-factor=2 --env=XCURSOR_THEME=Adwaita"), desc="Launch Spotify"),
 
     # Toggle between different layouts
     Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts"),
@@ -36,7 +38,7 @@ keys = [
     Key([mod], "Tab", lazy.layout.next(), desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
-    # Moving out of range in Columns layout will create new column.
+    # Moving out oef range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),

@@ -1,6 +1,12 @@
 configuration {
- modi: "window,drun,ssh,combi";
- font: "hack 10";
- combi-modi: "window,drun,ssh";
- }
+    modi: "window,drun,ssh,combi";
+    font: "hack 16";
+    combi-modi: "window,drun,ssh";
+}
+
 @theme "~/.config/rofi/themes/nord.rasi"
+
+element-icon {
+    size: 2ch;
+    margin: 0px 0.3em 0em 0.3em ;
+}
